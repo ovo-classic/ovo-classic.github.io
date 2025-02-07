@@ -40,9 +40,16 @@ function registerServiceWorker() {
 // Set up the PWA installation prompt and its interactions
 function setupPwaInstallationPrompt() {
     let deferredPrompt;
-    const isPwaInstalled = localStorage.getItem('pwaInstalled');
+    const isPwaInstalled = localStorage.getItem('pwaInstalled') === 'true';
 
-    if (!isPwaInstalled && !isMobileDevice()) {
+    // Check if the PWA is already installed
+    if (isPwaInstalled) {
+        console.log('PWA is already installed.');
+        return; // Exit if the PWA is already installed
+    }
+
+    // Only show the prompt for non-mobile devices
+    if (!isMobileDevice()) {
         const popupHTML = `
             <div id="pwa-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); color: #333; text-align: center; z-index: 1000; display: flex; align-items: center; justify-content: center;">
                 <div style="padding: 25px; background: #f5f5f5; border-radius: 20px; width: 90%; max-width: 450px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); text-align: center;">
@@ -103,7 +110,7 @@ function setupPwaInstallationPrompt() {
             popup.hide();
         });
     } else {
-        console.log('PWA is already installed or device is mobile.');
+        console.log('Device is mobile, skipping PWA installation prompt.');
     }
 }
 
