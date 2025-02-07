@@ -5,15 +5,16 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "Play Unblocked Games Premium at School or Office.",
+  "description": "Play OvO Classic Unblocked ad-free! Enjoy this classic platformer without any restrictions. Jump, run, and take on exciting challenges in OvO Unblocked!
+",
   "icons": [
     {
-      "src": "images/icon/favicon.png",
+      "src": "assets/img/icons/logo-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "images/icon/favicon.png",
+      "src": "assets/img/icons/logo-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
