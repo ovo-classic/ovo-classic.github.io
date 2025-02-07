@@ -42,7 +42,22 @@
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3770156349158643"
      crossorigin="anonymous"></script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  }
+</script>
 
+<link rel="manifest" href="https://ovo-classic.github.io/manifest.json">
+
+
+
+	
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
