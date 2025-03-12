@@ -1,7 +1,10 @@
-google.com, pub-3770156349158643, DIRECT, f08c47fec0942fa0
-google.com, pub-1350485650271346, DIRECT, f08c47fec0942fa0
-
 <?php
-header('Location: https://srv.adstxtmanager.com/19390/[YOUR_DOMAIN].com');
+// Output ads.txt content
+header('Content-Type: text/plain');
+echo "google.com, pub-3770156349158643, DIRECT, f08c47fec0942fa0\n";
+echo "google.com, pub-1350485650271346, DIRECT, f08c47fec0942fa0\n";
+
+// Redirect to the specified URL
+header('Location: https://srv.adstxtmanager.com/19390/ovo-classic.github.io');
 exit;
 ?>
