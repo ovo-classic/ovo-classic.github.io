@@ -1,3 +1,4 @@
+<script>
 // Initialize PWA-related features when the window loads
 $(window).on('load', function () {
     initializePwaFeatures();
@@ -40,8 +41,13 @@ function registerServiceWorker() {
 // Set up the PWA installation prompt and its interactions
 function setupPwaInstallationPrompt() {
     let deferredPrompt;
-    const isPwaInstalled = localStorage.getItem('pwaInstalled') === 'true' || window.matchMedia('(display-mode: standalone)').matches;
 
+    // Detect if PWA is already installed via multiple methods
+    const isPwaInstalled = localStorage.getItem('pwaInstalled') === 'true' ||
+                           window.matchMedia('(display-mode: standalone)').matches ||
+                           window.navigator.standalone === true;
+
+    // Only show popup if not installed and not on mobile
     if (!isPwaInstalled && !isMobileDevice()) {
         const popupHTML = `
             <div id="pwa-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); color: #333; text-align: center; z-index: 1000; display: flex; align-items: center; justify-content: center;">
@@ -106,3 +112,4 @@ function setupPwaInstallationPrompt() {
 function isMobileDevice() {
     return window.matchMedia("(max-width: 767px)").matches || /Mobi|Android/i.test(navigator.userAgent);
 }
+</script>
