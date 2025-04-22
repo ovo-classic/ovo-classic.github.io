@@ -1237,6 +1237,17 @@ Want more? A variety of OvO games and other fun indie titles are hosted on GitHu
     });
   }
 </script>
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the # link jump
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+</script>
 
 	
 </body>
