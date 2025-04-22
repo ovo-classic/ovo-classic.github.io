@@ -173,6 +173,17 @@
     <script src="/assets/js/plugins.js"></script>
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+		<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the # link jump
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+</script>
   
 </body>
 </html>
