@@ -133,6 +133,22 @@
         .play-button:hover {
             background-color: #fff;
         }
+		ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+li.dropdown {
+    position: relative;
+}
+
+li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
 		</style>
 	
 </head>
