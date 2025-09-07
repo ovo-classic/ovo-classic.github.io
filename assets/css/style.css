@@ -7699,7 +7699,7 @@ background-color: #864f30;
     padding: 0 0 0 30px;
     border-width: 0 0 0 2px;
     border-style: solid;
-    border-color: var(--ltn__secondary-color);
+    border-color: 4px solid var(--accent);
     max-width: 450px; }
   .ltn__section-title-2.text-right p {
     padding: 0 30px 0 0;
