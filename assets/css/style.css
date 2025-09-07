@@ -6440,9 +6440,9 @@ background-color: #864f30;
 }
 
 .product-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgb(255 255 255 / 30%);
+    cursor: pointer;
 }
 
 .product-img img {
