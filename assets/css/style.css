@@ -6645,8 +6645,7 @@ background-color: #864f30;
 
 /* product-item-3 */
 .ltn__product-item-3 {
-  border: 2px solid;
-  border-color: var(--border-color-8);
+
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
