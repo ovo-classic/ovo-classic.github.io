@@ -6433,7 +6433,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .product-img {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 10px;
+}
 
 .product-img img {
   position: relative;
