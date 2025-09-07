@@ -36,7 +36,7 @@
   .product-img:hover{transform:scale(1.05);box-shadow:0 8px 16px rgb(255,255,255,/30%);cursor:pointer}
   .product-img .game-name{
     position:absolute;left:0;bottom:-100%;width:100%;
-    background:rgba(0,0,0,.7);color:#fff;text-align:center;
+    background:#474c45b3;color:#fff;text-align:center;
     padding:10px 12px;font-size:14px;line-height:1.3;
     transition:bottom .4s ease-in-out
   }
