@@ -33,7 +33,7 @@
   const css = `
   .product-img{position:relative;overflow:hidden;border-radius:10px}
   .product-img img{width:100%;display:block;transition:transform 3.5s ease}
-  .product-img:hover{transform:scale(1.05);box-shadow:0 8px 16px rgba(0,0,0,.3);cursor:pointer}
+  .product-img:hover{transform:scale(1.05);box-shadow:0 8px 16px rgb(255,255,255,/30%);cursor:pointer}
   .product-img .game-name{
     position:absolute;left:0;bottom:-100%;width:100%;
     background:rgba(0,0,0,.7);color:#fff;text-align:center;
@@ -56,15 +56,12 @@
   // Helpers
   const toTitle = (str) => {
     if (!str) return "";
-    // strip extension & path, replace dashes/underscores, trim
     const base = str.split('/').pop().replace(/\.[a-z0-9]+$/i,'');
     const clean = (base || str).replace(/[-_]+/g,' ').replace(/\s+/g,' ').trim();
-    // Title Case
     return clean.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   };
 
   const getNameFor = (wrapper) => {
-    // Priority: data-game -> aria-label -> <img alt> -> link text -> filename
     const data = wrapper.getAttribute('data-game');
     if (data && data.trim()) return data.trim();
 
@@ -74,14 +71,12 @@
     const img = wrapper.querySelector('img');
     if (img && img.alt && img.alt.trim()) return img.alt.trim();
 
-    // If wrapped by a link, try its text
     const link = wrapper.closest('a');
     if (link) {
       const txt = link.textContent.replace(/\s+/g,' ').trim();
       if (txt) return txt;
     }
 
-    // Fallback: image filename
     if (img && img.src) return toTitle(img.src);
 
     return "Play Game";
@@ -89,30 +84,33 @@
 
   const init = () => {
     document.querySelectorAll('.product-img').forEach(box => {
-      if (box.__hasGameName) return; // idempotent
+      if (box.__hasGameName) return; 
       const img = box.querySelector('img');
       if (!img) return;
 
-      // Skip if already present
-      if (box.querySelector('.game-name')) {
-        box.__hasGameName = true;
-        return;
+      // Derive name
+      const name = getNameFor(box);
+
+      // Ensure ALT tag is set on image
+      if (!img.alt || !img.alt.trim()) {
+        img.alt = name;
       }
 
-      const name = getNameFor(box);
-      const label = document.createElement('div');
-      label.className = 'game-name';
-      label.textContent = name;
-      box.appendChild(label);
+      // Add overlay only if not present
+      if (!box.querySelector('.game-name')) {
+        const label = document.createElement('div');
+        label.className = 'game-name';
+        label.textContent = name;
+        box.appendChild(label);
+      }
+
       box.__hasGameName = true;
     });
   };
 
-  // Run now and also if content is injected later
   const ready = (fn) => (document.readyState !== 'loading') ? fn() : document.addEventListener('DOMContentLoaded', fn);
   ready(init);
 
-  // Observe for dynamically added cards
   const obs = new MutationObserver((muts) => {
     for (const m of muts) {
       if (m.type === 'childList') init();
@@ -120,6 +118,7 @@
   });
   obs.observe(document.documentElement, { childList: true, subtree: true });
 })();
+
 
 
 /*-------------------------------------------------------------
