@@ -5038,7 +5038,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 /* Sticky Background White */
 .sticky-active.ltn__sticky-bg-white {
-  background-color: var(--white); }
+  background-color: #642222; }
   .sticky-active.ltn__sticky-bg-white .ltn__main-menu > ul > li > a,
   .sticky-active.ltn__sticky-bg-white .header-wishlist a,
   .sticky-active.ltn__sticky-bg-white .mini-cart-icon,
