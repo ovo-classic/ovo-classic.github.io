@@ -283,7 +283,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: var(--ltn__heading-color);
+  color: #fff;
   clear: both;
   font-family: var(--ltn__heading-font);
   font-weight: 700;
@@ -291,7 +291,7 @@ h6,
   margin-bottom: 15px; }
 
 p {
-  color: var(--ltn__paragraph-color);
+  color: #fff;
   margin-bottom: 1.5em;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -1750,8 +1750,6 @@ ul {
 .pb-65 {
   padding-bottom: 65px; }
 
-.pb-70 {
-  padding-bottom: 70px; }
 
 .pb-75 {
   padding-bottom: 75px; }
@@ -12086,9 +12084,6 @@ input.cart-plus-minus-box {
 /*-------------------------
     Footer Area
 -------------------------*/
-.footer-top-area {
-  padding-top: 92px;
-  padding-bottom: 20px; }
 
 .footer-widget {
   margin-bottom: 60px; }
