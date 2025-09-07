@@ -4030,7 +4030,7 @@ background-color: #864f30;
   padding: 20px 10px;
   display: inline-block;
   white-space: nowrap;
-  color: var(--ltn__heading-color);
+  color: #fff;
   font-weight: 700;
   font-family: var(--ltn__heading-font); }
 
@@ -5049,7 +5049,7 @@ background-color: #864f30;
   .sticky-active.ltn__sticky-bg-white .header-feature-icon,
   .sticky-active.ltn__sticky-bg-white .header-search-1 .search-icon,
   .sticky-active.ltn__sticky-bg-white .ltn__header-options .ltn__drop-menu > ul > li > a {
-    color: var(--ltn__heading-color); }
+    color: #fff; }
   .sticky-active.ltn__sticky-bg-white .ltn__header-options-2 .header-search-1,
   .sticky-active.ltn__sticky-bg-white .ltn__header-options-2 .header-search-1 i,
   .sticky-active.ltn__sticky-bg-white .ltn__header-options-2 .ltn__drop-menu > ul > li > a,
