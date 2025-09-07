@@ -6438,17 +6438,38 @@ background-color: #864f30;
   overflow: hidden;
   border-radius: 10px;
 }
+
 .product-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
+
 .product-img img {
-  position: relative;
-  -webkit-transition: all 3.5s ease 0s;
-  -o-transition: all 3.5s ease 0s;
-  transition: all 3.5s ease 0s;
-  z-index: -1; }
+  width: 100%;
+  display: block;
+  transition: transform 3.5s ease;
+}
+
+/* Game name overlay */
+.product-img .game-name {
+  position: absolute;
+  bottom: -100%; /* start hidden below */
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  transition: bottom 0.4s ease-in-out;
+}
+
+/* Slide up on hover */
+.product-img:hover .game-name {
+  bottom: 0; /* slide up into view */
+}
+
 
 .product-img:before {
   position: absolute;
